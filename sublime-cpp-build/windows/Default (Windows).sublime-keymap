@@ -1,0 +1,3 @@
+[
+	{"keys": ["ctrl+alt+B"], "command": "cancel_build"}
+]

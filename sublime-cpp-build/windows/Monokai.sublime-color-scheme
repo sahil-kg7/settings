@@ -1,0 +1,15 @@
+{
+    "globals":
+    {
+        //"background": "#161d21",
+        "background": "#152633"
+    },
+    "rules":
+    [
+        {
+            "name": "",
+            "scope": "",
+            "foreground": ""
+        }
+    ]
+}
