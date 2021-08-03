@@ -7,6 +7,7 @@
 
 
 OR------------------------------------------------------------------------------------OR
+/comment the one not needed/
 
 {
     "cmd": ["g++ -Wall -Wextra -O2 -pthread -H -std=c++17 \"${file}\" -o runfile && ./runfile <in.txt> out.txt"], 
