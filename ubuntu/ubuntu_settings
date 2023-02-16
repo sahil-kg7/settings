@@ -7,3 +7,9 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 Revert:
 
 gsettings reset org.gnome.shell.extensions.dash-to-dock click-action
+
+Brightness issue:
+
+add the below variable to /etc/default/grub:
+
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_backlight=video"
