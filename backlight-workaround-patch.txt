@@ -1,0 +1,33 @@
+---
+ kernel-open/nvidia-modeset/nvidia-modeset-linux.c |    4 ++++
+ 1 file changed, 4 insertions(+)
+
+--- a/kernel-open/nvidia-modeset/nvidia-modeset-linux.c
++++ b/kernel-open/nvidia-modeset/nvidia-modeset-linux.c
+@@ -1082,12 +1082,14 @@ nvkms_register_backlight(NvU32 gpu_id, N
+     nvkms_bd->display_id = display_id;
+     nvkms_bd->drv_priv = drv_priv;
+ 
++#if IS_ENABLED(CONFIG_BACKLIGHT_CLASS_DEVICE)
+     nvkms_bd->dev =
+         backlight_device_register(name,
+                                   gpu_info[i].os_device_ptr,
+                                   nvkms_bd,
+                                   &nvkms_backlight_ops,
+                                   &props);
++#endif
+ 
+ done:
+     nvkms_free(gpu_info, NV_MAX_GPUS * sizeof(*gpu_info));
+@@ -1097,9 +1099,11 @@ done:
+ 
+ void nvkms_unregister_backlight(struct nvkms_backlight_device *nvkms_bd)
+ {
++#if IS_ENABLED(CONFIG_BACKLIGHT_CLASS_DEVICE)
+     if (nvkms_bd->dev) {
+         backlight_device_unregister(nvkms_bd->dev);
+     }
++#endif
+ 
+     nvkms_free(nvkms_bd, sizeof(*nvkms_bd));
+ }
