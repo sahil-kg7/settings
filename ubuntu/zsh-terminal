@@ -1,0 +1,3 @@
+oh-my-zsh terminal plugins:
+
+plugins=(git flutter node npm nvm pip python gitfast docker zsh-syntax-highlighting fast-syntax-highlighting zsh-autosuggestions)
